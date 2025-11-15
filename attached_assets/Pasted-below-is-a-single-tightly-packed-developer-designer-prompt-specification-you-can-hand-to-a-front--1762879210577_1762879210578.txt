@@ -1,0 +1,299 @@
+below is a single, tightly-packed developer/designer prompt & specification you can hand to a front-end dev, a website builder, or feed into an AI code generator to produce a purely static site for Payal Restaurant (Lakhisarai, Bihar). It is deployment-ready for Netlify’s free plan and includes everything you asked for: page-by-page content, exact copy for popups/CTAs/disclaimer/credits, SEO/meta guidance, what the XML files should contain, sitemap/robots/Search Console steps, UX/animation notes, accessibility, performance, and final checklist. This is a description only (no source code), ready for implementation — replace placeholder domain/URLs with your real domain before publishing.
+
+Project brief (single sentence)
+
+Create a modern, fast, fully static, SEO-first website for Payal Restaurant (Lakhisarai, Bihar) — responsive HTML + CSS + vanilla JS only — optimized for Netlify free hosting and Google indexing, with a tasteful opening pop-up crediting WebGlow, a menu disclaimer, rich SEO metadata, sitemap & robots XML, JSON-LD LocalBusiness schema (to be added), and smooth modern CSS animations and transitions.
+
+Deliverables (what the developer should produce)
+
+Static site files: index.html, menu.html, about.html, gallery.html, contact.html, privacy.html, credits.html and a single assets/ folder (images, fonts, favicon, logo).
+
+Global CSS file (modern responsive layout + variables + microinteraction classes).
+
+Single vanilla JS file for small behaviors: opening popup, mobile nav, lazy image loader, form validation, analytics opt-in, and menu disclaimer toggle.
+
+One sitemap.xml and one robots.txt.
+
+A netlify.toml (or Netlify deploy instructions) describing build & publish settings (static).
+
+A README.md with deploy steps for Netlify and Google Search Console instructions.
+
+JSON-LD LocalBusiness data block (to be injected into <head>).
+
+Images sized and WebP versions, plus low-quality image placeholders (LQIP).
+
+All meta tags and OG/Twitter tags placed in each page <head>.
+
+Accessibility check report (contrast, alt text, keyboard navigation).
+
+Optional: sitemap_index.xml if multiple sitemaps (not needed unless site grows).
+
+Site structure & page contents (what to display)
+
+Homepage (index.html)
+
+Hero: large photo or tasteful graphic + restaurant tagline: “Payal Restaurant — Classic vegetarian flavours of Lakhisarai, served fresh daily.”
+
+CTA buttons: Call, Order on Zomato, Order on Swiggy, View Menu.
+
+Short “About” blurb, hours summary, top dishes carousel, quick map, and footer with contact and credit.
+
+Opening popup (see Popup section).
+
+Menu (menu.html)
+
+Sections: Thalis, Starters, Main Courses, Chinese, South Indian, Desserts, Combos, Beverages.
+
+Each item: name, short description, sample price (if unsure mark “price may vary”), small dish photo.
+
+Prominent Menu Disclaimer at top of menu: “Disclaimer: Menu items and prices shown here are compiled from public listings and are for reference only. For the official menu and current prices please contact the restaurant directly at +91 63462 33115.”
+
+About (about.html)
+
+Short story: location (Near Sahid Dwar, Purani Bazar), family/friendly tone, what they are known for (vegetarian thalis, sweets), hours paragraph.
+
+Credit panel: “Website created by WebGlow” with logo and contact.
+
+Gallery (gallery.html)
+
+Grid of optimized images (exterior, interior, signature dishes). Lightbox view. Every image must have descriptive alt text.
+
+Contact (contact.html)
+
+Address block with Google Map embed, phone click-to-call, email if present, opening hours, and contact form (form posts to Netlify Forms or mailto fallback).
+
+Credits / WebGlow (credits.html)
+
+Short credit: “This website was designed & built by WebGlow — for enquiries about creating this type of website please contact webglow@zohomail.in
+” and show the logo (https://webglowx.onrender.com/logo.png
+).
+
+Privacy (privacy.html)
+
+Short privacy statement noting no user tracking except optional analytics and contact form handling. Provide cookie/analytics opt-in.
+
+Popup & CTAs (exact copy & behavior)
+
+Opening popup behavior: shows once per user session (store a session flag in sessionStorage). Also respect prefers-reduced-motion. Dismissible with an “X” and a primary CTA button.
+
+Popup content (exact text):
+
+Headline: “Like this website? Need one for your restaurant?”
+
+Body: “We design fast, SEO-friendly restaurant websites. For a similar site or customization contact WebGlow.”
+
+Buttons: Contact WebGlow (mailto:webglow@zohomail.in) and Close & Explore Site.
+
+Small footer line inside popup: “Built with ❤️ by WebGlow — logo credit.”
+
+Promotional microcopy on homepage: “Order fresh, eat local — payal’s homely thalis available daily. Call to reserve!”
+
+Visual / UI / animation guidance (modern, subtle, high-quality)
+
+Design language: clean card-based layout, generous white space, 8-point grid, rounded corners (12–16px), soft shadows, glassy panels for overlays. Use 2–3accent colors: deep indigo/navy, warm saffron accent, and neutral grays.
+
+Typography: system stack or modern web font (one display + one UI font). Use variable font if available for performance.
+
+CSS techniques: CSS variables for colors/spacing, utility classes for spacing, responsive container max widths, fluid type (clamp()).
+
+Animations & transitions:
+
+Use subtle transforms and fade-ins (translateY + opacity) for sections as they enter viewport (intersection observer).
+
+Card hover: scale(1.02) + soft shadow lift.
+
+Smooth hover transitions: transition: transform 280ms cubic-bezier(.2,.9,.2,1), box-shadow 280ms.
+
+Button microinteraction: subtle press (scale down) + ripple-like effect (pure CSS or tiny JS).
+
+Avoid heavy animations; respect prefers-reduced-motion.
+
+Menu interactions: accordion for categories on mobile, floating sticky order CTA on scroll.
+
+Mobile-first & performance: minimal DOM, critical CSS inline, defer non-critical JS.
+
+SEO & meta tags (exact copy to use — replace placeholder domain)
+
+Canonical base (replace with actual Netlify domain): https://payal-restaurant-lakhisarai.netlify.app
+
+Title (homepage): Payal Restaurant, Lakhisarai — Vegetarian Thalis & Local Favourites
+
+Meta description: Payal Restaurant in Purani Bazar, Lakhisarai — homely vegetarian thalis, North & South Indian favourites and sweets. Order via Zomato/Swiggy or call +91 63462 33115.
+
+Suggested page-specific titles & descriptions: provide unique titles & descriptions per page (Menu, About, Contact).
+
+Meta keywords (optional): Payal Restaurant, Lakhisarai restaurant, vegetarian thali Lakhisarai, best food Lakhisarai, Payal restaurant menu
+
+Open Graph (og) summary fields to include: og:title, og:description, og:type = website, og:url, og:image (use full path to WebGlow logo or a high-quality food photo), og:site_name.
+
+Twitter Card: summary_large_image with same image.
+
+Viewport & mobile tags: viewport=width=device-width, initial-scale=1 and mobile-friendly meta tags.
+
+Robots meta (per page): index, follow on main pages; noindex for staging copies.
+
+Structured data (JSON-LD) — content items to include: business name, telephone, address, postal code, geo coordinates (if available), openingHours, cuisine, priceRange (e.g., “₹”), url, sameAs links (Zomato/Swiggy), aggregateRating (only include if you have reliable ratings). Add image pointing to the primary photo or logo. (Developer to add valid JSON-LD script in <head>.)
+
+XML files & Search Console readiness (what to create and submit)
+
+sitemap.xml (what it should contain)
+
+A sitemap listing all canonical URLs (index, menu, about, gallery, contact, credits, privacy) with <loc>, <lastmod> (YYYY-MM-DD), <changefreq> (e.g., monthly or weekly for menu), and <priority> (0.8 for homepage).
+
+If more than 50–1000 URLs later, split into sitemap index.
+
+robots.txt (what it should contain)
+
+Allow: / for search bots.
+
+Point to sitemap location: Sitemap: https://<YOUR_DOMAIN>/sitemap.xml.
+
+Disallow sensitive paths (e.g., /admin/, /cgi-bin/) — none expected for static site.
+
+Google Search Console steps (deploy-ready checklist)
+
+Deploy site to Netlify and confirm the live URL (or custom domain).
+
+In Google Search Console, add property (choose Domain or URL prefix).
+
+Verify ownership (Netlify DNS TXT or HTML file).
+
+Submit sitemap.xml via Search Console > Sitemaps.
+
+Check Coverage report for indexing issues and fix any 4xx/5xx or blocked resources.
+
+Use URL Inspection to request indexing for the homepage and key pages.
+
+Monitor Performance report for impressions & queries, iterate on meta titles/descriptions and structured data.
+
+Bing / other search engines: submit sitemap via Bing Webmaster Tools as well.
+
+Netlify deployment notes (what to include)
+
+Project has no build step (pure static): set Netlify publish directory to project root or /public.
+
+Provide a netlify.toml description: set publish folder, redirect rules (if any), and headers for caching & security. Important headers to add: Cache-Control for images, Content-Security-Policy minimal, X-Frame-Options: DENY.
+
+Setup a custom domain and HTTPS (Netlify offers free Let’s Encrypt).
+
+Enable Netlify Forms if using the contact form — include data-netlify="true" attribute or provide form action to a simple mail service.
+
+Add _headers file or configure headers in Netlify to set long cache TTLs for static assets and short TTL for HTML.
+
+Performance & technical SEO checklist (must do)
+
+Serve images as WebP + fallback JPEG; create responsive srcset. Use LQIP/blur-up.
+
+Inline critical CSS for top-of-page render; defer the rest.
+
+Minify CSS and JS. Combine small assets where it helps.
+
+Use modern HTTP caching headers (long cache for images/css, short for html).
+
+Make sure pages are mobile-first and pass Core Web Vitals: LCP < 2.5s, FID/INP low, CLS stable.
+
+Preconnect to critical origins (Google Maps) only if used.
+
+Use semantic HTML (header, nav, main, footer).
+
+Add lang="en-IN" or lang="hi" as appropriate in <html> element.
+
+Accessibility (a11y) must-haves
+
+All images have descriptive alt attributes (e.g., “Payal Restaurant exterior — Nawada-Sikandara-Lakhisarai Rd”).
+
+Proper heading hierarchy (H1 per page).
+
+Sufficient color contrast for text.
+
+Keyboard focus states for interactive elements and focus trap avoidance in modals.
+
+Respect prefers-reduced-motion.
+
+Label contact form inputs and use ARIA where necessary.
+
+Content snippets you must include exactly (copy/paste)
+
+Menu disclaimer (place at top of menu page):
+“Disclaimer: Menu items and prices shown here are compiled from public listings and are for reference only. For the official menu and current prices please contact the restaurant directly at +91 63462 33115.”
+
+Footer credit (small):
+“Website design & build: WebGlow — https://webglowx.onrender.com/”
+ and show logo (https://webglowx.onrender.com/logo.png
+).
+
+Popup CTA button (mailto): Contact WebGlow → mailto:webglow@zohomail.in
+
+Primary contact text: Call: +91 63462 33115
+
+SEO meta description (homepage): (use the earlier suggested description above exactly).
+
+Suggested keywords & ad copy / promotional phrases
+
+Keywords: Lakhisarai restaurant, vegetarian thali Lakhisarai, payal restaurant menu, best food Lakhisarai, thali near Sahid Dwar.
+
+Short ad lines for banners/buttons:
+
+“Homely Thalis, Fresh Every Day.”
+
+“Large family portions — pocket friendly.”
+
+“Order now on Zomato & Swiggy — fast local delivery.”
+
+“Visit Payal Restaurant — near Purani Bazar, Lakhisarai.”
+
+Use one-liners on homepage hero: “Taste Lakhisarai’s favourite homestyle thali.”
+
+Analytics & privacy (recommendations)
+
+Add optional Google Analytics 4 (use consent banner). Do not force-load analytics until visitor consents.
+
+Consider server-side or Netlify Forms for contact submissions; avoid exposing emails in plain text (but mailto is okay for CTA).
+
+Add a small cookie/consent banner.
+
+Images / logo (use these exact resources)
+
+Primary logo (to be embedded in header & footer): https://webglowx.onrender.com/logo.png (use as PNG with transparent background).
+
+Social preview / og:image: choose a high-res food photo or the logo if no photo available. Provide multiple sizes (1200×630 recommended).
+
+All images must be optimized and credited if pulled from third-party listings.
+
+Security & legal (small notes)
+
+Do not publish personal phone numbers other than the official business number. Confirm with the owner before publishing.
+
+If using user reviews from directories, attribute them and avoid quoting more than 25 words verbatim unless permitted.
+
+Add a short privacy notice (what data is collected, form processing).
+
+Final SEO push (practical items to push ranking)
+
+Validate JSON-LD LocalBusiness and add business sameAs URLs (Zomato, Swiggy, JustDial, Google Maps) to help entity recognition.
+
+Create a Google My Business / Business Profile listing and ensure NAP (Name, Address, Phone) consistency.
+
+Have at least 3–5 high quality images with alt text and captions.
+
+Submit sitemap.xml to Search Console and use URL Inspection to submit main pages for indexing.
+
+Build at least 2–3 inbound links from local directories and social profiles (Zomato, Swiggy, JustDial, Facebook page).
+
+Keep content focused on local keywords: include “Lakhisarai”, neighborhood names, and common dish names.
+
+Implementation & deployment checklist (final)
+
+ Replace placeholder domain with Netlify URL or custom domain.
+
+ Insert exact contact phone and confirm hours with owner.
+
+ Add JSON-LD and test in Rich Results testing tool.
+
+ Generate sitemap.xml with correct full URLs and add to robots.txt.
+
+ Deploy to Netlify, verify HTTPS and mobile rendering.
+
+ Submit site in Google Search Console and submit sitemap.
+
+ Test accessibility & Core Web Vitals, iterate.

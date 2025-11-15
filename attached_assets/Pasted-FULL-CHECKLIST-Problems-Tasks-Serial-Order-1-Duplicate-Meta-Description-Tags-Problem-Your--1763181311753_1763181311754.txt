@@ -1,0 +1,236 @@
+FULL CHECKLIST — Problems + Tasks (Serial Order)
+1️⃣ Duplicate Meta Description Tags
+Problem:
+
+Your site has 2 <meta name="description"> tags.
+
+Google hates duplicate description tags.
+
+Task:
+
+Remove one description tag.
+
+Keep only ONE description:
+
+<meta name="description" content="Payal Restaurant in Purani Bazar, Lakhisarai — homely vegetarian thalis, North & South Indian favourites and sweets. Order via Zomato/Swiggy or call +91 63462 33115.">
+
+2️⃣ Duplicate Canonical Tags
+Problem:
+
+Page contains 2 canonical links.
+
+Google must see only ONE canonical.
+
+Task:
+
+Remove one canonical tag.
+
+Keep only:
+
+<link rel="canonical" href="https://payal-restaurent-lakhisarai.onrender.com"/>
+
+3️⃣ 404 Page Returns 200 OK (MAJOR CRITICAL ISSUE)
+Problem:
+
+Missing pages (example: /test123) return 200 OK instead of 404 Not Found.
+
+Google treats these as soft 404 → indexing problem.
+
+Task:
+
+Fix your 404 routing:
+
+If using React/Vite SPA
+
+Create public/_redirects file:
+
+/*    /index.html   200
+/404   /404.html    404
+
+
+Add a real 404.html file.
+
+4️⃣ No OpenGraph Tags
+Problem:
+
+Missing OG tags → bad social preview, weaker SEO.
+
+Task:
+
+Add OG tags to <head>:
+
+<meta property="og:title" content="Payal Restaurant, Lakhisarai">
+<meta property="og:description" content="Homely vegetarian thalis & local favourites.">
+<meta property="og:url" content="https://payal-restaurent-lakhisarai.onrender.com">
+<meta property="og:image" content="/og-image.jpg">
+
+5️⃣ Text-to-Code Ratio is Too Low (6%)
+Problem:
+
+Google sees very little actual text.
+
+Heavy HTML/CSS → low text ratio → slower indexing.
+
+Task:
+
+Add more written text to homepage.
+
+Reduce unnecessary divs/animations.
+
+6️⃣ Page Size Too Large (406 KB)
+Problem:
+
+Heavy images → slow loading.
+
+Task:
+
+Compress images
+
+Convert to WebP
+
+Resize large images
+
+7️⃣ Title Length Slightly High (67 chars)
+Problem:
+
+Recommended: 35–65 characters.
+
+Slightly over, not harmful but can be optimized.
+
+Task:
+
+You may shorten title to 60–65 characters.
+
+8️⃣ No Hreflang Tags
+Problem:
+
+Not critical unless multi-language.
+
+Task (optional):
+
+Add if needed.
+
+9️⃣ Missing Structured Data (Schema)
+Problem:
+
+No schema for LocalBusiness.
+
+Google prefers structured data for restaurants.
+
+Task:
+
+Add schema JSON-LD:
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Payal Restaurant",
+  "address": "Purani Bazar, Lakhisarai",
+  "servesCuisine": ["Indian", "Vegetarian"],
+  "telephone": "+916346233115",
+  "url": "https://payal-restaurent-lakhisarai.onrender.com"
+}
+</script>
+
+1️⃣0️⃣ Homepage & Navigation URLs Duplicate
+Problem:
+
+/ and /index.html both exist.
+
+Google may treat as duplicates.
+
+Task:
+
+Redirect /index.html → / using your _redirects file.
+
+1️⃣1️⃣ WWW and Non-WWW Are Separate
+Problem:
+
+Google sees:
+www.payal-restaurent-lakhisarai.onrender.com
+and
+payal-restaurent-lakhisarai.onrender.com
+as different websites.
+
+Task:
+
+Add canonical (already part of fix #2)
+OR
+Setup 301 redirect.
+
+1️⃣2️⃣ Low Mobile PageSpeed (56)
+Problem:
+
+Slow LCP + blocking time could delay indexing.
+
+Task:
+
+Reduce image size
+
+Use lazy loading
+
+Minify JS
+
+1️⃣3️⃣ Sitemap Not Found / Not Working
+Problem:
+
+Google could not fetch sitemap earlier.
+
+Task:
+
+Ensure your sitemap is at:
+
+https://payal-restaurent-lakhisarai.onrender.com/sitemap.xml
+
+
+Add in robots.txt:
+
+Sitemap: https://payal-restaurent-lakhisarai.onrender.com/sitemap.xml
+
+1️⃣4️⃣ Robots.txt Showing Correct but "Different Version" in GSC
+Problem:
+
+Google sometimes caches old robots.txt.
+
+Task:
+
+Use "Test live robots.txt"
+
+Add simple rules:
+
+User-agent: *
+Allow: /
+Sitemap: https://payal-restaurent-lakhisarai.onrender.com/sitemap.xml
+
+✅ FINAL SUMMARY — MUST FIX FIRST (IN ORDER)
+
+Priority Order:
+
+HIGH PRIORITY
+
+Remove duplicate canonical tags
+
+Remove duplicate meta descriptions
+
+Fix 404 page returning 200 OK
+
+Fix sitemap
+
+Fix robots.txt caching
+
+MEDIUM PRIORITY
+
+Add OpenGraph
+
+Compress images
+
+Improve text-to-code ratio
+
+LOW PRIORITY
+
+Adjust title length
+
+Add schema markup
+
+Add hreflang (optional)
